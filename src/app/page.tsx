@@ -11,6 +11,14 @@ export default function Home() {
     async function handleSubmit(e: any) {
         e.preventDefault();
         let count: number = 0;
+        if (parseInt(nIn) > 100) {
+          setMessage('n cannot be >100');
+          return;
+        }
+        if (nIn.length == 0) {
+          setMessage('n cannot be empty (this would lead to either 0 or infinitely many electrons)');
+          return;
+        }
         for (let n = 1; n < 100; n++) {
             for (let p = 0; p < n; p++) {
                 for (let mL = 0 - p; mL <= p; mL++) {
