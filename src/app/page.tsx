@@ -19,7 +19,7 @@ export default function Home() {
           setMessage('n cannot be empty (this would lead to either 0 or infinitely many electrons)');
           return;
         }
-        for (let n = 1; n < 100; n++) {
+        for (let n = 1; n <= 100; n++) {
             for (let p = 0; p < n; p++) {
                 for (let mL = 0 - p; mL <= p; mL++) {
                     ["+1/2", "-1/2"].forEach((mS) => {
@@ -43,19 +43,19 @@ export default function Home() {
             <div className="mb-2">
                 <label>
                     n:
-                    <input type="number" className="mx-2 bg-slate-200" name="n" value={nIn} onChange={(e) => setNIn(e.target.value)} />
+                    <input type="text" maxLength={10} className="mx-2 bg-slate-200" name="n" value={nIn} onChange={(e) => setNIn(e.target.value)} />
                 </label>
             </div>
             <div className="mb-2">
                 <label>
                     p:
-                    <input type="number" className="mx-2 bg-slate-200" name="p" value={pIn} onChange={(e) => setPIn(e.target.value)} />
+                    <input type="text" maxLength={10} className="mx-2 bg-slate-200" name="p" value={pIn} onChange={(e) => setPIn(e.target.value)} />
                 </label>
             </div>
             <div className="mb-2">
                 <label>
                     m_l:
-                    <input type="number" className="mx-2 bg-slate-200" name="m_l" value={mLIn} onChange={(e) => setMLIn(e.target.value)} />
+                    <input type="text" maxLength={10} className="mx-2 bg-slate-200" name="m_l" value={mLIn} onChange={(e) => setMLIn(e.target.value)} />
                 </label>
             </div>
             <div className="mb-2">
